@@ -16,7 +16,13 @@ local function run()
                 c:raise()
             end,
             {description = "toggle fullscreen", group = "client"}),
-        awful.key({ modkey, }, "q",      function (c) c:kill()                         end,
+        awful.key({ modkey, }, "q", function (c) 
+            c:kill()
+            awful.client.focus.history.previous()
+                if client.focus then
+                    client.focus:raise()
+                end                     
+        end,
                   {description = "close", group = "client"}),
         awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ,
                   {description = "toggle floating", group = "client"}),
