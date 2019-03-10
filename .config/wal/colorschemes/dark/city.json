@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/aschey/Pictures/35547826153_91fc0994e7_o.png",
+    "alpha": "100",
+    "special": {
+        "background": "#040314",
+        "foreground": "#f6ddc1",
+        "cursor": "#f6ddc1"
+    },
+    "colors": {
+        "color0": "#040314",
+        "color1": "#947584",
+        "color2": "#D77783",
+        "color3": "#398DA1",
+        "color4": "#A49385",
+        "color5": "#E89686",
+        "color6": "#FDB28B",
+        "color7": "#f6ddc1",
+        "color8": "#ac9a87",
+        "color9": "#947584",
+        "color10": "#D77783",
+        "color11": "#398DA1",
+        "color12": "#A49385",
+        "color13": "#E89686",
+        "color14": "#FDB28B",
+        "color15": "#f6ddc1"
+    }
+}
