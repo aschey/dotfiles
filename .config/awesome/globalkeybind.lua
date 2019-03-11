@@ -3,6 +3,7 @@ local gears = require("gears")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 local hotkeys_popup = require("awful.hotkeys_popup")
+local menubar = require("menubar")
 
 local function run()
     return gears.table.join(

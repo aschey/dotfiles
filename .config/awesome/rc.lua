@@ -5,7 +5,7 @@ pcall(require, "luarocks.loader")
 -- Standard awesome library
 local gears = require("gears")
 local awful = require("awful")
---require("awful.autofocus")
+require("awful.autofocus")
 -- Theme handling library
 local beautiful = require("beautiful")
 -- Notification library
@@ -66,7 +66,7 @@ awful.layout.layouts = {
 }
 -- }}}
 
-menu.run()
+--menu.run()
 
 -- Keyboard map indicator and switcher
 mykeyboardlayout = awful.widget.keyboardlayout()
