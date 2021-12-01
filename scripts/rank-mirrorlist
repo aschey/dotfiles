@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ $(id -u) != 0 ]; then
+  exec sudo -- "$0" "$@"
+else
+  cat /etc/pacman.d/mirrorlist.pacnew | awk -v RS='\n\n' '/^## United States/{print $0}' | awk '/^#Server/{print substr($0, 2)}' | rankmirrors - > /etc/pacman.d/mirrorlist
+  rm /etc/pacman.d/mirrorlist.pacnew
+fi
