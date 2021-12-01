@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --no-fehbg --bg-scale '/home/aschey/pictures/mxld4d2grs421.png' 
