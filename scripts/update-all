@@ -1,0 +1,6 @@
+set -e
+yay
+rustup update
+cargo install-update -a
+sudo npm update -g
+yarn global upgrade
