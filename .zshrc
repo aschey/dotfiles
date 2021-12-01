@@ -146,6 +146,7 @@ alias ls="exa --icons"
 alias find="fd"
 alias df="duf"
 alias htop="btop"
+alias yaa="yadm add -u"
 
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
