@@ -18,6 +18,7 @@ font pango:monospace 8
 #smart_gaps on
 gaps inner 5
 gaps outer 1
+gaps top 33
 
 # Disable window titles
 for_window [class="^.*"] border pixel 0
