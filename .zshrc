@@ -43,7 +43,7 @@ export ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion history)
 
 # Wait before showing suggestions, this is to prevent zsh-autocomplete from showing irrelevant suggestions
 # in the middle of typing
-zstyle ':autocomplete:*' min-delay 0.1
+zstyle ':autocomplete:*' min-delay 0.3
 
 # Use zoxicde for directory completion
 #zstyle ':autocomplete:*' recent-dirs zoxide
@@ -105,7 +105,8 @@ plugins=(
   gh
   golang
   history-substring-search
-  rustup
+  # per-directory-history
+rustup
   thefuck
   vscode
   zsh-autosuggestions

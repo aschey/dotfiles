@@ -1,5 +1,6 @@
 set -e
 yay
+yes "a n" | yay -S wezterm-nightly-bin
 rustup update
 cargo install-update -a
 sudo npm update -g
