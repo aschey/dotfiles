@@ -94,7 +94,6 @@ plugins=(
   aliases
   alias-finder
   archlinux
-  cargo
   colored-man-pages
   command-not-found
   docker
@@ -106,7 +105,7 @@ plugins=(
   golang
   history-substring-search
   # per-directory-history
-rustup
+  rust
   thefuck
   vscode
   zsh-autosuggestions
