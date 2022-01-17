@@ -5,8 +5,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+NPM_PACKAGES="${HOME}/.npm-packages"
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.local/bin:$HOME/.bin:$HOME/.cargo/bin:$HOME/go/bin:$HOME/scripts:$PATH
+export PATH=$HOME/.local/bin:$HOME/.bin:$HOME/.cargo/bin:$HOME/go/bin:$HOME/scripts:$NPM_PACKAGES/bin:$PATH
+export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/aschey/.oh-my-zsh"

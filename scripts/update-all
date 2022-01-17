@@ -1,6 +1,7 @@
 set -e
+rm -rf /home/aschey/.cache/yay/wezterm-nightly-bin
 yay
-yes "a n" | yay -S wezterm-nightly-bin
+yay -S wezterm-nightly-bin --noconfirm
 rustup update
 cargo install-update -a
 sudo npm update -g
