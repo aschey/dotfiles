@@ -9,7 +9,7 @@
 [core]
 	editor = nano
 [alias]
-	publish = "!git push -u origin $(git branch --show-current)"
-	cleanup-branches = "!git branch --merged | grep -v \"\\*\" | grep -v \"master\" | xargs -n 1 git branch -d"
-	checkout-latest = "!git checkout $(git branch -a --sort=-committerdate | head -n 1 | cut -c18-)"
-	find-branch = "!git switch $(git branch --all | fzf | sed -e 's|remotes/origin/||g')"
+    publish = "!git push -u origin $(git branch --show-current)"
+    cleanup-branches = "!git remote prune origin && git branch --merged | grep -Ev \"(master|main|\\*)\" | xargs -n1 -r git branch -d"
+    checkout-latest = "!git checkout $(git branch -a --sort=-committerdate | head -n 1 | cut -c18-)"
+    find-branch = "!git switch $(git branch --all | fzf | sed -e 's|remotes/origin/||g')"
