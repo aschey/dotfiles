@@ -4,10 +4,9 @@
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
-NPM_PACKAGES="${HOME}/.npm-packages"
+source /usr/share/nvm/init-nvm.sh
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.local/bin:$HOME/.bin:$HOME/.cargo/bin:$HOME/go/bin:$HOME/scripts:$NPM_PACKAGES/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/.bin:$HOME/.cargo/bin:$HOME/go/bin:$HOME/scripts:$PATH
 export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 
 # Path to your oh-my-zsh installation.
@@ -45,7 +44,7 @@ export ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion history)
 
 # Wait before showing suggestions, this is to prevent zsh-autocomplete from showing irrelevant suggestions
 # in the middle of typing
-zstyle ':autocomplete:*' min-delay 0.3
+#zstyle ':autocomplete:*' min-delay 1.0
 
 # Use zoxicde for directory completion
 #zstyle ':autocomplete:*' recent-dirs zoxide
@@ -112,7 +111,7 @@ plugins=(
   vscode
   zsh-autosuggestions
   zsh-interactive-cd
-  zsh-autocomplete
+  # zsh-autocomplete
 )
 
 source $ZSH/oh-my-zsh.sh
