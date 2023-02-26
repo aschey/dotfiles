@@ -2,7 +2,7 @@
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 source /usr/share/nvm/init-nvm.sh
 # If you come from bash you might have to change your $PATH.
@@ -92,26 +92,26 @@ zstyle ':autocomplete:*' fzf-completion yes
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  aliases
-  alias-finder
-  archlinux
-  colored-man-pages
-  command-not-found
-  docker
-  docker-compose
-  fzf
-  git
-  gitfast
-  gh
-  golang
-  history-substring-search
-  # per-directory-history
-  rust
-  thefuck
-  vscode
-  zsh-autosuggestions
-  zsh-interactive-cd
-  # zsh-autocomplete
+    aliases
+    alias-finder
+    archlinux
+    colored-man-pages
+    command-not-found
+    docker
+    docker-compose
+    fzf
+    #  git
+    gitfast
+    gh
+    golang
+    history-substring-search
+    # per-directory-history
+    rust
+    thefuck
+    vscode
+    zsh-autosuggestions
+    zsh-interactive-cd
+    # zsh-autocomplete
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -156,3 +156,14 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 eval "$(zoxide init zsh)"
 
 eval $(thefuck --alias)
+
+source /home/aschey/.config/broot/launcher/bash/br
+
+# setting for gup command (auto generate)
+fpath=(~/.zsh/completion $fpath)
+autoload -Uz compinit && compinit -i
+
+# pnpm
+export PNPM_HOME="/home/aschey/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end

@@ -13,3 +13,6 @@
     cleanup-branches = "!git remote prune origin && git branch --merged | grep -Ev \"(master|main|\\*)\" | xargs -n1 -r git branch -d"
     checkout-latest = "!git checkout $(git branch -a --sort=-committerdate | head -n 1 | cut -c18-)"
     find-branch = "!git switch $(git branch --all | fzf | sed -e 's|remotes/origin/||g')"
+[safe]
+	directory = /opt/flutter
+	directory = /opt/flutter
