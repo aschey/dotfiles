@@ -1,9 +1,9 @@
 #!/bin/bash
 
 if [ $(id -u) != 0 ]; then
-  exec sudo -- "$0" "$@"
+    exec sudo -- "$0" "$@"
 else
-  cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.temp
-  cat /etc/pacman.d/mirrorlist.temp | awk -v RS='\n\n' '/^## United States/{print $0}' | awk '/^#Server/{print substr($0, 2)}' | rankmirrors - > /etc/pacman.d/mirrorlist
-  rm /etc/pacman.d/mirrorlist.temp
+    cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.temp
+    cat /etc/pacman.d/mirrorlist.temp | awk -v RS='\n\n' '/^## United States/{print $0}' | awk '/^#Server/{print substr($0, 2)}' | rankmirrors - > /etc/pacman.d/mirrorlist
+    rm /etc/pacman.d/mirrorlist.temp
 fi

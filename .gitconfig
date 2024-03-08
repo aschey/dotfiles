@@ -16,3 +16,7 @@
 [safe]
 	directory = /opt/flutter
 	directory = /opt/flutter
+[init]
+	defaultBranch = main
+[credential]
+	helper = store --file ~/.git-credentials

@@ -23,6 +23,7 @@ gaps top 33
 # Disable window titles
 for_window [class="^.*"] border pixel 0
 for_window [title="daemon-slayer-gui"] floating enable
+for_window [class="R_x11"] floating enable
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).

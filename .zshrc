@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 source /usr/share/nvm/init-nvm.sh
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.local/bin:$HOME/.bin:$HOME/.cargo/bin:$HOME/go/bin:$HOME/scripts:$PATH
+export PATH=$HOME/.local/bin:$HOME/.bin:$HOME/.cargo/bin:$HOME/go/bin:$HOME/scripts:/opt/flutter/bin:$HOME/Android/Sdk/cmdline-tools/latest/bin:$PATH
 export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 
 # Path to your oh-my-zsh installation.
@@ -167,3 +167,6 @@ autoload -Uz compinit && compinit -i
 export PNPM_HOME="/home/aschey/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+eval "$(atuin init zsh)"
+export CHROME_EXECUTABLE="$(which google-chrome-stable)"
+export ANDROID_HOME=$HOME/Android/Sdk
