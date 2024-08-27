@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sink=$(pactl list short sinks | grep FiiO)
+arr=($sink)
+pactl set-default-sink ${arr[0]}

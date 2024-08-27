@@ -1,0 +1,27 @@
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[user]
+	email = aschey13@gmail.com
+	name = Austin Schey
+[pull]
+	rebase = false
+[core]
+	editor = nano
+[alias]
+    publish = "!git push -u origin $(git branch --show-current)"
+    cleanup-branches = "!git remote prune origin && git branch --merged | grep -Ev \"(master|main|\\*)\" | xargs -n1 -r git branch -d"
+    checkout-latest = "!git checkout $(git branch -a --sort=-committerdate | head -n 1 | cut -c18-)"
+    find-branch = "!git switch $(git branch --all | fzf | sed -e 's|remotes/origin/||g')"
+[safe]
+	directory = /opt/flutter
+	directory = /opt/flutter
+[init]
+	defaultBranch = main
+[credential]
+	helper = store --file ~/.git-credentials
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
