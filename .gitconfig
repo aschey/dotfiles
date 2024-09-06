@@ -8,13 +8,25 @@
 	rebase = false
 [core]
 	editor = nano
+	pager = delta
+[diff]
+	tool = difftastic
+[difftool]
+	prompt = false
+[difftool "difftastic"]
+	cmd = difft "$LOCAL" "$REMOTE"
+[pager]
+    difftool = true
+[interactive]
+	diffFilter = delta --color-only --features=interactive
+[delta]
+	line-numbers = true
 [alias]
-    publish = "!git push -u origin $(git branch --show-current)"
-    cleanup-branches = "!git remote prune origin && git branch --merged | grep -Ev \"(master|main|\\*)\" | xargs -n1 -r git branch -d"
-    checkout-latest = "!git checkout $(git branch -a --sort=-committerdate | head -n 1 | cut -c18-)"
-    find-branch = "!git switch $(git branch --all | fzf | sed -e 's|remotes/origin/||g')"
+	publish = "!git push -u origin $(git branch --show-current)"
+	cleanup-branches = "!git remote prune origin && git branch --merged | grep -Ev \"(master|main|\\*)\" | xargs -n1 -r git branch -d"
+	checkout-latest = "!git checkout $(git branch -a --sort=-committerdate | head -n 1 | cut -c18-)"
+	find-branch = "!git switch $(git branch --all | fzf | sed -e 's|remotes/origin/||g')"
 [safe]
-	directory = /opt/flutter
 	directory = /opt/flutter
 [init]
 	defaultBranch = main
