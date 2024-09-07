@@ -8,9 +8,6 @@ return {
                 autoload_configurations = false,
             },
             server = {
-                --cmd = function()
-                --    return { "/home/aschey/code/rust-analyzer/target/release/rust-analyzer" }
-                --end,
                 default_settings = {
                     ["rust-analyzer"] = {
                         cargo = {

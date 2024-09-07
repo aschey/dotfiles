@@ -12,6 +12,13 @@ return {
                     return 100
                 end
             end,
+            on_open = function()
+                -- workaround for https://github.com/akinsho/toggleterm.nvim/issues/582
+                local ol = vim.opt_local
+                ol.number = false
+                ol.signcolumn = "no"
+                ol.relativenumber = false
+            end,
         })
 
         function _G.set_terminal_keymaps()
