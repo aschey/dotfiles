@@ -8,6 +8,9 @@ return {
                 autoload_configurations = false,
             },
             server = {
+                --cmd = function()
+                --    return { "/home/aschey/code/rust-analyzer/target/release/rust-analyzer" }
+                --end,
                 default_settings = {
                     ["rust-analyzer"] = {
                         cargo = {
@@ -16,12 +19,13 @@ return {
                             },
                             features = "all",
                         },
-                        checkOnSave = {
-                            enable = true,
-                        },
+                        checkOnSave = true,
                         check = {
                             features = "all",
                             command = "clippy",
+                        },
+                        rustfmt = {
+                            extraArgs = { "+nightly" },
                         },
                     },
                 },
