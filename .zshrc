@@ -161,6 +161,7 @@ source /home/aschey/.config/broot/launcher/bash/br
 
 # setting for gup command (auto generate)
 fpath=(~/.zsh/completion $fpath)
+fpath+=~/.zfunc
 autoload -Uz compinit && compinit -i
 
 # pnpm

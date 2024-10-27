@@ -34,12 +34,14 @@ return {
             --  into multiple repos for maintenance purposes.
             "hrsh7th/cmp-nvim-lsp",
             "hrsh7th/cmp-path",
+            "ryo33/nvim-cmp-rust",
         },
         config = function()
             -- See `:help cmp`
             local cmp = require("cmp")
             local luasnip = require("luasnip")
             luasnip.config.setup({})
+            local compare = require("cmp.config.compare")
 
             cmp.setup({
                 snippet = {
@@ -104,6 +106,30 @@ return {
                     { name = "nvim_lsp" },
                     { name = "luasnip" },
                     { name = "path" },
+                },
+            })
+            local cmp_rust = require("cmp-rust")
+            cmp.setup.filetype({ "rust" }, {
+                sorting = {
+                    priority_weight = 2,
+                    comparators = {
+                        -- deprioritize `.box`, `.mut`, etc.
+                        cmp_rust.deprioritize_postfix,
+                        -- deprioritize `Borrow::borrow` and `BorrowMut::borrow_mut`
+                        cmp_rust.deprioritize_borrow,
+                        -- deprioritize `Deref::deref` and `DerefMut::deref_mut`
+                        cmp_rust.deprioritize_deref,
+                        -- deprioritize `Into::into`, `Clone::clone`, etc.
+                        cmp_rust.deprioritize_common_traits,
+                        compare.offset,
+                        compare.exact,
+                        compare.score,
+                        compare.recently_used,
+                        compare.locality,
+                        compare.sort_text,
+                        compare.length,
+                        compare.order,
+                    },
                 },
             })
         end,

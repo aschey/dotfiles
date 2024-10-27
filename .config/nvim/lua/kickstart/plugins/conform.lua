@@ -30,8 +30,9 @@ return { -- Autoformat
         end,
         formatters_by_ft = {
             lua = { "stylua" },
-            markdown = { "mdformat", "injected" },
+            markdown = { "deno_fmt", "injected" },
             rust = { "rustfmt" },
+            toml = { "taplo" },
             -- Conform can also run multiple formatters sequentially
             -- python = { "isort", "black" },
             --

@@ -79,8 +79,7 @@ return {
         vim.keymap.set("n", "<leader>dt", function()
             local current_file = vim.api.nvim_buf_get_name(0)
             -- force paging to prevent terminal from exiting
-            local difftool =
-                Terminal:new({ cmd = "git -c delta.paging=always difftool -- " .. current_file, hidden = true })
+            local difftool = Terminal:new({ cmd = "git difftool -- " .. current_file, hidden = true })
 
             difftool:toggle()
         end, { desc = "[D]iff [T]ool" })
@@ -89,12 +88,21 @@ return {
             local current_file = vim.api.nvim_buf_get_name(0)
             -- force paging to prevent terminal from exiting
             local difftool = Terminal:new({
-                cmd = "git -c delta.paging=always difftool -- " .. current_file,
+                cmd = "git difftool -- " .. current_file,
                 direction = "float",
                 hidden = true,
             })
             difftool:toggle()
         end, { desc = "[D]iff Tool ([F]loating)" })
+
+        vim.keymap.set("n", "<leader>dn", function()
+            local diff = Terminal:new({
+                cmd = "git diff",
+                direction = "float",
+                hidden = true,
+            })
+            diff:toggle()
+        end)
 
         local lazygit = Terminal:new({ cmd = "lazygit", direction = "float", hidden = true })
 
