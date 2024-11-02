@@ -46,8 +46,8 @@ export ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion history)
 # in the middle of typing
 #zstyle ':autocomplete:*' min-delay 1.0
 
-# Use zoxicde for directory completion
-#zstyle ':autocomplete:*' recent-dirs zoxide
+# Use zoxide for directory completion
+zstyle ':autocomplete:*' recent-dirs zoxide
 
 # Use fzf for tab completions
 zstyle ':autocomplete:*' fzf-completion yes
@@ -127,7 +127,7 @@ source $ZSH/oh-my-zsh.sh
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
 # else
-#   export EDITOR='mvim'
+#   export EDITOR='nvim'
 # fi
 
 # Compilation flags
@@ -146,7 +146,7 @@ alias cd="z"
 alias ls="exa --icons"
 alias find="fd"
 alias df="duf"
-alias yaa="yadm add -u && yadm status"
+alias yaa="yadm add -u && yadm add ~/.config/nvim && yadm status"
 
 source /home/aschey/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
 
