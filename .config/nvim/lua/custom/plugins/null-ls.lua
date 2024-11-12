@@ -6,6 +6,7 @@ return {
         local cspell = require("cspell")
         local cspell_config = {
             cspell_config_dirs = { "~/.config/" },
+            read_config_synchronously = false,
         }
         null_ls.setup({
             sources = {
