@@ -58,5 +58,13 @@ return {
 			mods = "LEADER",
 			action = act.AdjustPaneSize({ "Up", 5 }),
 		},
+		{
+			key = "n",
+			mods = "CTRL|ALT",
+			action = wezterm.action.SpawnCommandInNewTab({
+				cwd =  "/home/aschey/.config/nvim" ,
+				args = { "nvim", "." },
+			}),
+		},
 	},
 }

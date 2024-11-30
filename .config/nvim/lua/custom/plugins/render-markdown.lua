@@ -4,4 +4,7 @@ return {
     ---@module 'render-markdown'
     ---@type render.md.UserConfig
     opts = {},
+    config = function()
+        require("render-markdown").setup({ file_types = { "markdown", "mdx" } })
+    end,
 }

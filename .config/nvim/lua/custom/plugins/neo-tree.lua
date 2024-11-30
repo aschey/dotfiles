@@ -15,7 +15,7 @@ return {
     },
     opts = {
         filesystem = {
-            hijack_netrw_behavior = "open_current",
+            hijack_netrw_behavior = "open_default",
             window = {
                 mappings = {
                     ["\\"] = "close_window",
@@ -30,7 +30,7 @@ return {
             callback = function()
                 local f = vim.fn.expand("%:p")
                 if vim.fn.isdirectory(f) ~= 0 then
-                    vim.cmd("Neotree current dir=" .. f)
+                    vim.cmd("Neotree reveal dir=" .. f)
                     -- neo-tree is loaded now, delete the init autocmd
                     vim.api.nvim_clear_autocmds({ group = "NeoTreeInit" })
                 end

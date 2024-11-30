@@ -30,14 +30,16 @@ return { -- Autoformat
         end,
         formatters_by_ft = {
             lua = { "stylua" },
+            ["mdx"] = { "prettier", "injected" },
             markdown = { "deno_fmt", "injected" },
             rust = { "rustfmt" },
             toml = { "taplo" },
+            json = { "deno_fmt" },
             -- Conform can also run multiple formatters sequentially
             -- python = { "isort", "black" },
             --
             -- You can use 'stop_after_first' to run the first available formatter from the list
-            -- javascript = { "prettierd", "prettier", stop_after_first = true },
+            javascript = { "prettierd", "prettier", "deno_fmt", stop_after_first = true },
         },
     },
 }
