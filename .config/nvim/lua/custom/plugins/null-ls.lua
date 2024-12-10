@@ -3,7 +3,8 @@ return {
     --enabled = false,
     dependencies = {
         "nvimtools/none-ls-extras.nvim",
-        { dir = "/home/aschey/code/cspell.nvim", name = "cspell", dev = true },
+        "aschey/cspell.nvim",
+        --{ dir = "/home/aschey/code/cspell.nvim", name = "cspell", dev = true },
     },
     --dependencies = { "davidmh/cspell.nvim" },
     config = function()
@@ -16,7 +17,12 @@ return {
         null_ls.setup({
             --debug = true,
             sources = {
-                cspell.diagnostics.with({ config = cspell_config }),
+                cspell.diagnostics.with({
+                    config = cspell_config,
+                    diagnostics_postprocess = function(diagnostic)
+                        diagnostic.severity = vim.diagnostic.severity["INFO"]
+                    end,
+                }),
                 cspell.code_actions.with({ config = cspell_config }),
                 null_ls.builtins.code_actions.proselint,
                 --null_ls.builtins.code_actions.gitsigns,

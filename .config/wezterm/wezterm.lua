@@ -6,12 +6,12 @@ local config = {
 	enable_wayland = true,
 	use_fancy_tab_bar = false,
 	tab_max_width = 32,
-	window_padding = {
-		left = 0,
-		right = 0,
-		top = 0,
-		bottom = 0,
-	},
+	-- window_padding = {
+	-- 	left = 0,
+	-- 	right = 0,
+	-- 	top = 0,
+	-- 	bottom = 0,
+	-- },
 	status_update_interval = 500,
 	leader = { key = "a", mods = "CTRL" },
 	keys = {
@@ -97,6 +97,5 @@ config.colors = {
 		},
 	},
 }
---tabline.apply_to_config(config)
 
 return config
