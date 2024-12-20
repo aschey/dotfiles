@@ -175,6 +175,7 @@ eval "$(rbenv init -)"
 export ELECTRON_OZONE_PLATFORM_HINT=wayland
 export TERM=wezterm
 export BROWSER=$(which firefox-developer-edition)
-export EDITOR=vim
+export EDITOR=nvim
+#export WAYLAND_DISPLAY=1
 
 source /home/aschey/scripts/wezterm.sh
