@@ -4,7 +4,18 @@ return {
         build = ":TSUpdate",
         main = "nvim-treesitter.configs", -- Sets main module to use for opts
         opts = {
-            ensure_installed = { "bash", "c", "html", "lua", "luadoc", "markdown", "vim", "vimdoc", "mermaid" },
+            ensure_installed = {
+                "bash",
+                "c",
+                "html",
+                "lua",
+                "luadoc",
+                "markdown",
+                "vim",
+                "vimdoc",
+                "mermaid",
+                "python",
+            },
             -- Autoinstall languages that are not installed
             auto_install = true,
             highlight = {

@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 # Reinstall all aur packages that depend on an old version of python (run after python version upgrade)
-pacman -Qqo /usr/lib/python$(prev-python-version)/ | xargs -L1 yay -S 
+pacman -Qqo /usr/lib/python$(prev-python-version)/ | xargs -L1 yay -S --noconfirm 
+pipx reinstall-all

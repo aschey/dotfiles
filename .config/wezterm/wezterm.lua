@@ -5,6 +5,7 @@ local config = {
 	color_scheme = "Catppuccin Mocha",
 	enable_wayland = true,
 	use_fancy_tab_bar = false,
+	enable_kitty_keyboard = false,
 	tab_max_width = 32,
 	-- window_padding = {
 	-- 	left = 0,

@@ -2,6 +2,7 @@ return {
     "mrcjkb/rustaceanvim",
     version = "^5",
     lazy = false,
+    --enabled = false,
     config = function()
         vim.g.rustaceanvim = {
             dap = {
