@@ -18,6 +18,26 @@ local config = {
 	keys = {
 		{
 			key = "LeftArrow",
+			mods = "CTRL",
+			action = act.ActivatePaneDirection("Left"),
+		},
+		{
+			key = "RightArrow",
+			mods = "CTRL",
+			action = act.ActivatePaneDirection("Right"),
+		},
+		{
+			key = "UpArrow",
+			mods = "CTRL",
+			action = act.ActivatePaneDirection("Up"),
+		},
+		{
+			key = "DownArrow",
+			mods = "CTRL",
+			action = act.ActivatePaneDirection("Down"),
+		},
+		{
+			key = "LeftArrow",
 			mods = "CTRL|ALT",
 			action = act.SplitPane({
 				direction = "Left",
