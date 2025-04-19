@@ -35,6 +35,7 @@ return { -- Autoformat
             rust = { "rustfmt" },
             toml = { "taplo" },
             json = { "deno_fmt" },
+            proto = { "buf" },
             -- Conform can also run multiple formatters sequentially
             -- python = { "isort", "black" },
             --

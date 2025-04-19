@@ -11,7 +11,8 @@ return {
             -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
             { "j-hui/fidget.nvim", opts = {} },
             -- Allows extra capabilities provided by nvim-cmp
-            "hrsh7th/cmp-nvim-lsp",
+            --"hrsh7th/cmp-nvim-lsp",
+            "saghen/blink.cmp",
         },
         config = function()
             -- Brief aside: **What is LSP?**
@@ -107,7 +108,10 @@ return {
                     --
                     -- When you move your cursor, the highlights will be cleared (the second autocommand).
                     local client = vim.lsp.get_client_by_id(event.data.client_id)
-                    if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
+                    if
+                        client
+                        and client:supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight, event.buf)
+                    then
                         local highlight_augroup =
                             vim.api.nvim_create_augroup("kickstart-lsp-highlight", { clear = false })
                         vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
@@ -135,7 +139,9 @@ return {
                     -- code, if the language server you are using supports them
                     --
                     -- This may be unwanted, since they displace some of your code
-                    if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
+                    if
+                        client and client:supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf)
+                    then
                         map("<leader>th", function()
                             vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
                         end, "[T]oggle Inlay [H]ints")
@@ -147,8 +153,8 @@ return {
             --  By default, Neovim doesn't support everything that is in the LSP specification.
             --  When you add nvim-cmp, luasnip, etc. Neovim now has *more* capabilities.
             --  So, we create new capabilities with nvim cmp, and then broadcast that to the servers.
-            local capabilities = vim.lsp.protocol.make_client_capabilities()
-            capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
+            -- local capabilities = vim.lsp.protocol.make_client_capabilities()
+            -- capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
             -- Enable the following language servers
             --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
@@ -201,13 +207,8 @@ return {
             --  You can press `g?` for help in this menu.
             require("mason").setup()
 
-            -- You can add other tools here that you want Mason to install
-            -- for you, so that they are available from within Neovim.
-            local ensure_installed = vim.tbl_keys(servers or {})
-            vim.list_extend(ensure_installed, {
-                "stylua", -- Used to format Lua code
-            })
-            require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
+            local capabilities = require("blink.cmp").get_lsp_capabilities()
+            local lspconfig = require("lspconfig")
 
             require("mason-lspconfig").setup({
                 handlers = {
@@ -217,10 +218,21 @@ return {
                         -- by the server configuration above. Useful when disabling
                         -- certain features of an LSP (for example, turning off formatting for tsserver)
                         server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
-                        require("lspconfig")[server_name].setup(server)
+                        lspconfig[server_name].setup(server)
                     end,
                 },
+                ensure_installed = servers,
+                automatic_installation = true,
             })
+
+            -- You can add other tools here that you want Mason to install
+            -- for you, so that they are available from within Neovim.
+            local ensure_installed = vim.tbl_keys(servers or {})
+            vim.list_extend(ensure_installed, {
+                "stylua", -- Used to format Lua code
+            })
+            require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
+
             require("go").setup({ lsp_cfg = false })
             local cfg = require("go.lsp").config() -- config() return the go.nvim gopls setup
 

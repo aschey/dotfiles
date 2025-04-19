@@ -8,25 +8,28 @@
 	rebase = false
 [core]
 	editor = nvim
-	pager = diffnav
+	;diff = diffnav
+[pager]
+	diff = diffnav
 [diff]
-	; tool = difftastic
-	; external = difft
+;	tool = difftastic
+;	external = difft
 [difftool]
 	prompt = false
 ; [difftool "difftastic"]
 	; cmd = difft "$LOCAL" "$REMOTE"
-[pager]
-	difftool = true
+; [pager]
+; 	difftool = true
 [interactive]
 	diffFilter = delta --color-only --features=interactive
-[delta]
-	line-numbers = true
+;[delta]
+;	line-numbers = true
 [alias]
 	publish = "!git push -u origin $(git branch --show-current)"
 	cleanup-branches = "!git remote prune origin && git branch --merged | grep -Ev \"(master|main|\\*)\" | xargs -n1 -r git branch -d"
 	checkout-latest = "!git checkout $(git branch -a --sort=-committerdate | head -n 1 | cut -c18-)"
 	find-branch = "!git switch $(git branch --all | fzf | sed -e 's|remotes/origin/||g')"
+	delete-branches = "!git fetch --prune && git branch -vv | awk '/: gone]\\s+/ {print $1}' | xargs git branch -D"
 [safe]
 	directory = /opt/flutter
 [init]

@@ -147,6 +147,7 @@ alias ls="exa --icons"
 alias find="fd"
 alias df="duf"
 alias yaa="yadm add -u && yadm add ~/.config/nvim && yadm status"
+alias htop="TERM=xterm-256color htop"
 
 source /home/aschey/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
 

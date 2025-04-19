@@ -1,6 +1,6 @@
 return {
     "mrcjkb/rustaceanvim",
-    version = "^5",
+    version = "^6",
     lazy = false,
     --enabled = false,
     config = function()
@@ -16,6 +16,9 @@ return {
                                 enable = true,
                             },
                             features = "all",
+                        },
+                        procMacro = {
+                            enable = true,
                         },
                         checkOnSave = true,
                         check = {

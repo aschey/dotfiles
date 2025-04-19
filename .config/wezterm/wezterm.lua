@@ -18,22 +18,22 @@ local config = {
 	keys = {
 		{
 			key = "LeftArrow",
-			mods = "CTRL",
+			mods = "ALT",
 			action = act.ActivatePaneDirection("Left"),
 		},
 		{
 			key = "RightArrow",
-			mods = "CTRL",
+			mods = "ALT",
 			action = act.ActivatePaneDirection("Right"),
 		},
 		{
 			key = "UpArrow",
-			mods = "CTRL",
+			mods = "ALT",
 			action = act.ActivatePaneDirection("Up"),
 		},
 		{
 			key = "DownArrow",
-			mods = "CTRL",
+			mods = "ALT",
 			action = act.ActivatePaneDirection("Down"),
 		},
 		{
