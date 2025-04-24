@@ -6,7 +6,7 @@ return {
             { "williamboman/mason.nvim", opts = { PATH = "append" } }, -- NOTE: Must be loaded before dependants
             "williamboman/mason-lspconfig.nvim",
             "WhoIsSethDaniel/mason-tool-installer.nvim",
-
+            "nvim-java/nvim-java",
             -- Useful status updates for LSP.
             -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
             { "j-hui/fidget.nvim", opts = {} },
@@ -237,6 +237,8 @@ return {
             local cfg = require("go.lsp").config() -- config() return the go.nvim gopls setup
 
             require("lspconfig").gopls.setup(cfg)
+
+            require("lspconfig").jdtls.setup({})
         end,
     },
 }

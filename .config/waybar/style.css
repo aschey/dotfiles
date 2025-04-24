@@ -1,21 +1,29 @@
 * {
     font-family: JetBrainsMono;
-    color: #9ca0b0;
 }
 
 window#waybar {
     background: rgba(40,42,54,0.5);
+    color: #7c7f93;
+}
+
+.modules-right {
+    margin-right: 12px;
 }
 
 window#waybar.hidden {
-	opacity: 0.2;
+    opacity: 0.2;
 }
 
-#window {
-      color: transparent;
-	background: transparent;
+#tray menu {
+    background: rgba(40,42,54,1.0);
+    color: #7c7f93;
 }
 
+#tray menu menuitem:hover {
+    background: #04a5e5;
+    color: #303446;
+}
 
 .module {
     margin-left: 8px;
@@ -31,50 +39,22 @@ window#waybar.hidden {
     border: 1px solid #4c4f69;
 }
 
-#workspaces button.focused {
-    color: #9aedfe;
+
+#workspaces button {
+    color: #7c7f93;
+
 }
 
 #workspaces button:hover {
-	transition: none;
-	box-shadow: inherit;
-	text-shadow: inherit;
-	color: #ff79c6;
+    transition: none;
+    box-shadow: inherit;
+    text-shadow: inherit;
+    border-color: rgba(40,42,54,0.5);
+    background: rgba(40,42,54,0.5);
 }
-
-#mpris {
-
-}
-
 
 #idle_inhibitor {
     padding-left: 8px;
 }
 
-#network {
-}
 
-#disk {
-}
-
-#pulseaudio {
-}
-
-#temperature {
-}
-
-#backlight {
-}
-
-#cpu {
-}
-
-#battery {
-}
-
-#memory {
-}
-
-#clock {
-	margin-right: 12px;
-}
