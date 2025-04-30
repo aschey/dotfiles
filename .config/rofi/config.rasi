@@ -1,2 +1,2 @@
-
-@theme "/usr/share/rofi/themes/Monokai.rasi"
+@import "catppuccin-mocha.rasi"
+@theme "catppuccin-default.rasi"

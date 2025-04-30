@@ -178,5 +178,6 @@ export TERM=wezterm
 export BROWSER=$(which firefox-developer-edition)
 export EDITOR=nvim
 #export WAYLAND_DISPLAY=1
+export LOCAL_BIN="/home/aschey/.bin"
 
 source /home/aschey/scripts/wezterm.sh
