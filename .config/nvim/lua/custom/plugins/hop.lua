@@ -1,6 +1,7 @@
 return {
     "smoka7/hop.nvim",
     version = "v2.*",
+    enabled = false,
     config = function()
         local hop = require("hop")
         local directions = require("hop.hint").HintDirection

@@ -147,7 +147,6 @@ alias ls="exa --icons"
 alias find="fd"
 alias df="duf"
 alias yaa="yadm add -u && yadm add ~/.config/nvim && yadm status"
-alias htop="TERM=xterm-256color htop"
 
 source /home/aschey/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
 
@@ -174,7 +173,6 @@ export CHROME_EXECUTABLE="$(which chromium)"
 export ANDROID_HOME=$HOME/Android/Sdk
 eval "$(rbenv init -)"
 export ELECTRON_OZONE_PLATFORM_HINT=wayland
-export TERM=wezterm
 export BROWSER=$(which firefox-developer-edition)
 export EDITOR=nvim
 #export WAYLAND_DISPLAY=1

@@ -221,6 +221,7 @@ return {
                         lspconfig[server_name].setup(server)
                     end,
                 },
+                automatic_enable = true,
                 ensure_installed = servers,
                 automatic_installation = true,
             })
@@ -238,7 +239,7 @@ return {
 
             require("lspconfig").gopls.setup(cfg)
 
-            require("lspconfig").jdtls.setup({})
+            -- require("lspconfig").jdtls.setup({})
         end,
     },
 }

@@ -1,5 +1,6 @@
 return {
     "gbprod/substitute.nvim",
+    enabled = false,
     config = function()
         local substitute = require("substitute")
         substitute.setup({})
