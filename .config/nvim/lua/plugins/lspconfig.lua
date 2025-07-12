@@ -96,7 +96,9 @@ return {
 
                     -- Opens a popup that displays documentation about the word under your cursor
                     --  See `:help K` for why this keymap.
-                    map("K", vim.lsp.buf.hover, "Hover Documentation")
+                    map("K", function()
+                        vim.lsp.buf.hover({ border = "rounded" })
+                    end, "Hover Documentation")
 
                     -- WARN: This is not Goto Definition, this is Goto Declaration.
                     --  For example, in C this would take you to the header.
@@ -180,7 +182,7 @@ return {
                 --    https://github.com/pmizio/typescript-tools.nvim
                 --
                 -- But for many setups, the LSP (`tsserver`) will work just fine
-                -- tsserver = {},
+                ts_ls = {},
                 --
 
                 lua_ls = {
@@ -220,8 +222,13 @@ return {
                         server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
                         lspconfig[server_name].setup(server)
                     end,
+                    ["ts_ls"] = function()
+                        -- do nothing, managed by typescript-tools
+                    end,
                 },
-                automatic_enable = true,
+                automatic_enable = {
+                    exclude = { "ts_ls" },
+                },
                 ensure_installed = servers,
                 automatic_installation = true,
             })
