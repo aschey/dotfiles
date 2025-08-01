@@ -66,11 +66,11 @@ return {
                     },
                     goto_previous_start = {
                         ["[m"] = "@function.outer",
-                        ["[["] = "@class.outer",
+                        --  ["[["] = "@class.outer",
                     },
                     goto_previous_end = {
                         ["[M"] = "@function.outer",
-                        ["[]"] = "@class.outer",
+                        --  ["[]"] = "@class.outer",
                     },
                     -- Below will go to either the start or the end, whichever is closer.
                     -- Use if you want more granular movements

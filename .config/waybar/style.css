@@ -4,7 +4,7 @@
 
 window#waybar {
     background: rgba(40,42,54,0.5);
-    color: #7c7f93;
+    color: #9a9db5;
 }
 
 .modules-right {
@@ -17,7 +17,7 @@ window#waybar.hidden {
 
 #tray menu {
     background: rgba(40,42,54,1.0);
-    color: #7c7f93;
+    color: #9a9db5;
 }
 
 #tray menu menuitem:hover {
@@ -41,7 +41,7 @@ window#waybar.hidden {
 
 
 #workspaces button {
-    color: #7c7f93;
+    color: #9a9db5;
 
 }
 

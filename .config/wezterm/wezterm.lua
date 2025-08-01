@@ -30,12 +30,12 @@ local config = {
 		background = "#1e1e2e",
 		brights = {
 			"#585b70",
-			"#f38ba8",
-			"#a6e3a1",
-			"#f9e2af",
+			"#eba0ac",
+			"#a6da95",
+			"#eed49f",
 			"#89b4fa",
-			"#f5c2e7",
-			"#94e2d5",
+			"#f5bde6",
+			"#45475a",
 			"#a6adc8",
 		},
 
@@ -96,6 +96,17 @@ local config = {
 	},
 	leader = { key = "a", mods = "CTRL" },
 	keys = {
+		{
+			key = "Tab",
+			mods = "ALT",
+			action = act.ActivateTabRelative(1),
+		},
+		{
+			key = "Tab",
+			mods = "ALT|SHIFT",
+			action = act.ActivateTabRelative(-1),
+		},
+
 		{
 			key = "LeftArrow",
 			mods = "ALT",
@@ -181,6 +192,13 @@ local config = {
 				args = { "nvim", "." },
 			}),
 		},
+		{
+			key = "t",
+			mods = "CTRL|ALT",
+			action = wezterm.action.SpawnCommandInNewTab({
+				cwd = ".",
+			}),
+		},
 	},
 }
 
@@ -189,8 +207,8 @@ local config = {
 local tabline = wezterm.plugin.require("https://github.com/michaelbrusegard/tabline.wez")
 tabline.setup({})
 local tabline_config = require("tabline.config")
-config.colors.tab_bar.background = tabline_config.colors.normal_mode.c.bg
-config.colors.tab_bar.new_tab.bg_color = tabline_config.colors.normal_mode.c.bg
-config.colors.tab_bar.new_tab.fg_color = tabline_config.colors.normal_mode.c.fg
+-- config.colors.tab_bar.background = tabline_config.colors.normal_mode.c.bg
+-- config.colors.tab_bar.new_tab.bg_color = tabline_config.colors.normal_mode.c.bg
+-- config.colors.tab_bar.new_tab.fg_color = tabline_config.colors.normal_mode.c.fg
 
 return config

@@ -42,6 +42,9 @@ vim.keymap.set("n", "<C-Up>", "<C-w><C-k>", { desc = "Move focus to the upper wi
 
 vim.keymap.set({ "n", "v" }, "<leader>p", '"0p')
 
+vim.keymap.set("n", "<leader>hs", "<cmd>split<CR>", { desc = "[H]orizontal [S]plit" })
+vim.keymap.set("n", "<leader>vs", "<cmd>vsplit<CR>", { desc = "[V]ertical [S]plit" })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
