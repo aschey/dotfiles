@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+rustup update stable
+toolchain=$(rustup update stable | grep -ohP '\d\.\d+\.\d+')
+perl -i -pe "s/channel\s*=\s*\"\d\.\d+\.\d+\"/channel = \"${toolchain}\"/g" rust-toolchain.toml

@@ -246,7 +246,7 @@ return {
 
             require("lspconfig").gopls.setup(cfg)
 
-            -- require("lspconfig").jdtls.setup({})
+            require("lspconfig").jdtls.setup({})
         end,
     },
 }

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -e
+
+projects=(stream-download-rs icy-metadata terminput tipsy vercel-tokei)
+
+for p in ${projects[@]}; do
+  cd "$HOME/code/${p}"
+  update-toolchain
+  cargo clippy --all-features -- -D warnings
+  git status
+done

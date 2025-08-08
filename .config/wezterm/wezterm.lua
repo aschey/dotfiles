@@ -1,5 +1,6 @@
 local wezterm = require("wezterm")
 local act = wezterm.action
+local call = wezterm.action_callback
 local config = {
 	font = wezterm.font("CaskaydiaCove Nerd Font Mono"),
 	enable_wayland = true,
@@ -30,12 +31,12 @@ local config = {
 		background = "#1e1e2e",
 		brights = {
 			"#585b70",
-			"#eba0ac",
-			"#a6da95",
-			"#eed49f",
+			"#f38ba8",
+			"#a6e3a1",
+			"#f9e2af",
 			"#89b4fa",
-			"#f5bde6",
-			"#45475a",
+			"#f5c2e7",
+			"#94e2d5",
 			"#a6adc8",
 		},
 
@@ -165,6 +166,13 @@ local config = {
 			action = act.CloseCurrentPane({ confirm = true }),
 		},
 		{
+			key = "m",
+			mods = "CTRL|ALT",
+			action = call(function(win, pane)
+				local tab, window = pane:move_to_new_window()
+			end),
+		},
+		{
 			key = "LeftArrow",
 			mods = "LEADER",
 			action = act.AdjustPaneSize({ "Left", 5 }),
@@ -207,8 +215,8 @@ local config = {
 local tabline = wezterm.plugin.require("https://github.com/michaelbrusegard/tabline.wez")
 tabline.setup({})
 local tabline_config = require("tabline.config")
--- config.colors.tab_bar.background = tabline_config.colors.normal_mode.c.bg
--- config.colors.tab_bar.new_tab.bg_color = tabline_config.colors.normal_mode.c.bg
--- config.colors.tab_bar.new_tab.fg_color = tabline_config.colors.normal_mode.c.fg
+config.colors.tab_bar.background = tabline_config.colors.normal_mode.c.bg
+config.colors.tab_bar.new_tab.bg_color = tabline_config.colors.normal_mode.c.bg
+config.colors.tab_bar.new_tab.fg_color = tabline_config.colors.normal_mode.c.fg
 
 return config

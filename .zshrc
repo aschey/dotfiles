@@ -141,7 +141,7 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias cat="bat --paging=never"
+alias cat="bat --paging=never --theme=ansi"
 alias cd="z"
 alias ls="exa --icons"
 alias find="fd"
