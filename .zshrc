@@ -111,6 +111,7 @@ plugins=(
     vscode
     zsh-autosuggestions
     zsh-interactive-cd
+    zsh-syntax-highlighting
     # zsh-autocomplete
 )
 
@@ -162,6 +163,7 @@ source /home/aschey/.config/broot/launcher/bash/br
 # setting for gup command (auto generate)
 fpath=(~/.zsh/completion $fpath)
 fpath+=~/.zfunc
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 autoload -Uz compinit && compinit -i
 
 # pnpm
