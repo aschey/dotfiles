@@ -1,8 +1,8 @@
 return {
     "saghen/blink.cmp",
     -- optional: provides snippets for the snippet source
-    dependencies = { "rafamadriz/friendly-snippets" },
-
+    dependencies = { "rafamadriz/friendly-snippets", "L3MON4D3/LuaSnip" },
+    event = "VimEnter",
     -- use a release tag to download pre-built binaries
     version = "1.*",
     -- AND/OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
@@ -55,7 +55,10 @@ return {
         -- Default list of enabled providers defined so that you can extend it
         -- elsewhere in your config, without redefining it, due to `opts_extend`
         sources = {
-            default = { "lsp", "path", "snippets", "buffer" },
+            default = { "lsp", "path", "snippets", "lazydev", "buffer" },
+            providers = {
+                lazydev = { module = "lazydev.integrations.blink", score_offset = 100 },
+            },
         },
 
         -- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
@@ -67,6 +70,7 @@ return {
             implementation = "prefer_rust_with_warning",
             sorts = { "exact", "score", "sort_text" },
         },
+        signature = { enabled = true },
     },
     opts_extend = { "sources.default" },
 }

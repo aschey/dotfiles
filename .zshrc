@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 source /usr/share/nvm/init-nvm.sh
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.local/bin:$HOME/.bin:$HOME/.cargo/bin:$HOME/go/bin:$HOME/scripts:/opt/flutter/bin:$HOME/Android/Sdk/cmdline-tools/latest/bin:/home/aschey/.rbenv/versions/3.3.0/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/.bin:$HOME/.cargo/bin:$HOME/go/bin:$HOME/scripts:/opt/flutter/bin:$HOME/Android/Sdk/cmdline-tools/latest/bin:$HOME/.rbenv/versions/3.3.0/bin:$PATH
 export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 
 # Path to your oh-my-zsh installation.
@@ -148,6 +148,8 @@ alias ls="exa --icons"
 alias find="fd"
 alias df="duf"
 alias yaa="yadm add -u && yadm add ~/.config/nvim && yadm status"
+alias cp="/usr/local/bin/advcp -g"
+alias mv="/usr/local/bin/advmv -g"
 
 source /home/aschey/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
 
@@ -158,7 +160,7 @@ eval "$(zoxide init zsh)"
 
 eval $(thefuck --alias)
 
-source /home/aschey/.config/broot/launcher/bash/br
+source $HOME/.config/broot/launcher/bash/br
 
 # setting for gup command (auto generate)
 fpath=(~/.zsh/completion $fpath)
@@ -167,7 +169,7 @@ fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 autoload -Uz compinit && compinit -i
 
 # pnpm
-export PNPM_HOME="/home/aschey/.local/share/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 eval "$(atuin init zsh)"

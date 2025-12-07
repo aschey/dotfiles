@@ -210,7 +210,6 @@ return {
             require("mason").setup()
 
             local capabilities = require("blink.cmp").get_lsp_capabilities()
-            local lspconfig = require("lspconfig")
 
             require("mason-lspconfig").setup({
                 handlers = {
@@ -220,7 +219,7 @@ return {
                         -- by the server configuration above. Useful when disabling
                         -- certain features of an LSP (for example, turning off formatting for tsserver)
                         server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
-                        lspconfig[server_name].setup(server)
+                        vim.lsp.enable(server)
                     end,
                     ["ts_ls"] = function()
                         -- do nothing, managed by typescript-tools
@@ -242,11 +241,11 @@ return {
             require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
             require("go").setup({ lsp_cfg = false })
-            local cfg = require("go.lsp").config() -- config() return the go.nvim gopls setup
+            -- local cfg = require("go.lsp").config() -- config() return the go.nvim gopls setup
 
-            require("lspconfig").gopls.setup(cfg)
+            --vim.lsp.config("gopls")
 
-            require("lspconfig").jdtls.setup({})
+            --vim.lsp.config("jdtls")
         end,
     },
 }
