@@ -1,0 +1,9 @@
+theme = IBM3290
+
+# font-size = 18
+
+font-family = "Ac437Mindset Nerd Font"
+
+mouse-hide-while-typing = true
+
+custom-shader = ~/code//crt-shader-with-chromatic-aberration-glow-scanlines-dot-matrix//crt-shader-with-chromatic-aberration-glow-scanlines-dot-matrix.glsl

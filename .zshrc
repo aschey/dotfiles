@@ -144,7 +144,7 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias cat="bat --paging=never --theme=ansi"
 alias cd="z"
-alias ls="exa --icons"
+alias ls="exa --icons always"
 alias find="fd"
 alias df="duf"
 alias yaa="yadm add -u && yadm add ~/.config/nvim && yadm status"
