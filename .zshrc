@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 source /usr/share/nvm/init-nvm.sh
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.local/bin:$HOME/.bin:$HOME/.cargo/bin:$HOME/go/bin:$HOME/scripts:/opt/flutter/bin:$HOME/Android/Sdk/cmdline-tools/latest/bin:$HOME/.rbenv/versions/3.3.0/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/.bin:$HOME/.cargo/bin:$HOME/go/bin:$HOME/scripts:/opt/flutter/bin:$HOME/Android/Sdk/cmdline-tools/latest/bin:$HOME/.rbenv/versions/3.3.0/bin:$HOME/.local/share/nvim/site:$PATH
 export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 
 # Path to your oh-my-zsh installation.
